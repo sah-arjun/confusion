@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- endbuild -->
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -35,7 +37,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="modalLogin">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span>
@@ -87,7 +89,7 @@
                     <h4 class="modal-title">Reserve a Table</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-boday align-items-center">
+                <div class="modal-body align-items-center">
                     <form>
                         <div class="form-group row ml-auto">
                                 <label for="inlineRadio1" class="col-12 col-md-2 col-form-label">Number of Guests</label> 
@@ -162,8 +164,8 @@
                     <img src="./img/logo.png" class="img-fluid" alt="Logo">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a class="btn btn-warning btn-block btn-sm" 
-                    role="button" data-toggle="modal" data-target="#reserveModal"
+                    <a id="modalReserve" class="btn btn-warning btn-block btn-sm" 
+                    role="button" 
                     >Reserve Table</a>
                 </div>
             </div>
@@ -305,26 +307,13 @@
         </div>
     </footer>
 
+    <!-- build:js js/main.js -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#myCarousel").carousel({interval: 2000});
-            $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("span").hasClass("fa-pause")) {
-                    $("#myCarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass("fa-pause");
-                    $("#carouselButton").children("span").addClass("fa-play");
-                } else if ($("#carouselButton").children("span").hasClass("fa-play")) {
-                    $("#myCarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass("fa-play");
-                    $("#carouselButton").children("span").addClass("fa-pause");
-                }
-            });        
-        })
-    </script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
